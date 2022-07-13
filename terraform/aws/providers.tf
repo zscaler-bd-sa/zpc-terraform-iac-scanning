@@ -4,6 +4,9 @@ provider "aws" {
   region  = var.region
 }
 
+#
+# All passwords in this repo are used as an example and should not be used in production.
+#
 provider "aws" {
   alias      = "plain_text_access_keys_provider"
   region     = "us-west-1"

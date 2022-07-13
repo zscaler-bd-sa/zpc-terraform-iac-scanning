@@ -113,7 +113,7 @@ resource azurerm_network_watcher_flow_log "flow_log" {
     days    = 10
   }
   tags = {
-    git_commit           = "898d5beaec7ffdef6df0d7abecff407362e2a74e"
+    git_commit           = "N/A"
     git_file             = "terraform/azure/networking.tf"
     git_org              = "zscaler-bd-sa"
     git_repo             = "zs-terraform-iac-scanning"
