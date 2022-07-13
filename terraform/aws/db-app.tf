@@ -21,7 +21,7 @@ resource "aws_db_instance" "default" {
   publicly_accessible     = true
 
   tags = merge({
-    Name        = "${local.resource_prefix.value}-rds"
+    Name        = "${local.resource_prefix.value}-og"
     Environment = local.resource_prefix.value
     }, {
     git_commit           = "N/A"
@@ -32,7 +32,7 @@ resource "aws_db_instance" "default" {
 
   # Ignore password changes from tf plan diff
   lifecycle {
-    ignore_changes = ["password"]
+    ignore_changes = [password]
   }
 }
 
