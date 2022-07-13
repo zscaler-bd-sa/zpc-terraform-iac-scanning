@@ -109,8 +109,8 @@ resource aws_eks_cluster "eks_cluster" {
   }
 
   depends_on = [
-    "aws_iam_role_policy_attachment.policy_attachment-AmazonEKSClusterPolicy",
-    "aws_iam_role_policy_attachment.policy_attachment-AmazonEKSServicePolicy",
+    aws_iam_role_policy_attachment.policy_attachment-AmazonEKSClusterPolicy,
+    aws_iam_role_policy_attachment.policy_attachment-AmazonEKSServicePolicy,
   ]
   tags = merge({
     Name        = "${local.resource_prefix.value}-og"
