@@ -18,13 +18,9 @@ resource "alicloud_db_instance" "seeme" {
     value = "50"
   }
   tags = {
-    git_commit           = "c2ff052009d49c65e6af551eb1506abc73b5976c"
+    git_commit           = "N/A"
     git_file             = "terraform/alicloud/rds.tf"
-    git_last_modified_at = "2022-04-05 15:14:28"
-    git_last_modified_by = "james.woolfenden@gmail.com"
-    git_modifiers        = "james.woolfenden"
-    git_org              = "bridgecrewio"
-    git_repo             = "terragoat"
-    yor_trace            = "7bd1394e-0a79-4288-8f83-5abcca5bf1ba"
+    git_org              = "zscaler-bd-sa"
+    git_repo             = "zs-terraform-iac-scanning"
   }
 }

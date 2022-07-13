@@ -54,13 +54,8 @@ resource "azurerm_application_gateway" "network" {
     backend_http_settings_name = local.http_setting_name
   }
   tags = {
-    git_commit           = "b07a42ebd74b8f0ba647e20b872474b1c29b4814"
     git_file             = "terraform/azure/application_gateway.tf"
-    git_last_modified_at = "2021-05-02 10:08:55"
-    git_last_modified_by = "nimrodkor@users.noreply.github.com"
-    git_modifiers        = "harkiratbhardwaj/nimrodkor"
-    git_org              = "bridgecrewio"
-    git_repo             = "terragoat"
-    yor_trace            = "3f62753b-3d20-4fa7-b402-b780234a14d8"
+    git_org              = "zscaler-bd-sa"
+    git_repo             = "zs-terraform-iac-scanning"
   }
 }

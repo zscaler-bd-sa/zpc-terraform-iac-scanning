@@ -7,10 +7,10 @@ resource random_string "password" {
 }
 
 resource azurerm_linux_virtual_machine "linux_machine" {
-  admin_username                  = "terragoat-linux"
+  admin_username                  = "zs-terraform-iac-scanning-linux"
   admin_password                  = random_string.password.result
   location                        = var.location
-  name                            = "terragoat-linux"
+  name                            = "zs-terraform-iac-scanning-linux"
   network_interface_ids           = [azurerm_network_interface.ni_linux.id]
   resource_group_name             = azurerm_resource_group.example.name
   size                            = "Standard_F2"
@@ -27,17 +27,12 @@ resource azurerm_linux_virtual_machine "linux_machine" {
   }
 
   tags = merge({
-    terragoat   = true
-    environment = var.environment
+    zs-terraform-iac-scanning = true
+    environment               = var.environment
     }, {
-    git_commit           = "de3bb777f967989c2c3332faea16cb614c55ccc9"
     git_file             = "terraform/azure/instance.tf"
-    git_last_modified_at = "2020-06-17 15:48:15"
-    git_last_modified_by = "nimrodkor@gmail.com"
-    git_modifiers        = "nimrodkor"
-    git_org              = "bridgecrewio"
-    git_repo             = "terragoat"
-    yor_trace            = "736ef713-51b8-4178-ad69-406be81f6ef2"
+    git_org              = "zscaler-bd-sa"
+    git_repo             = "zs-terraform-iac-scanning"
   })
 }
 
@@ -62,16 +57,11 @@ resource azurerm_windows_virtual_machine "windows_machine" {
   }
 
   tags = merge({
-    terragoat   = true
-    environment = var.environment
+    zs-terraform-iac-scanning = true
+    environment               = var.environment
     }, {
-    git_commit           = "de3bb777f967989c2c3332faea16cb614c55ccc9"
     git_file             = "terraform/azure/instance.tf"
-    git_last_modified_at = "2020-06-17 15:48:15"
-    git_last_modified_by = "nimrodkor@gmail.com"
-    git_modifiers        = "nimrodkor"
-    git_org              = "bridgecrewio"
-    git_repo             = "terragoat"
-    yor_trace            = "41938587-bdfc-4234-b941-560f1ae7d6c0"
+    git_org              = "zscaler-bd-sa"
+    git_repo             = "zs-terraform-iac-scanning"
   })
 }

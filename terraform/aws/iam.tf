@@ -5,16 +5,12 @@ resource "aws_iam_user" "user" {
   tags = merge({
     Name        = "${local.resource_prefix.value}-user"
     Environment = local.resource_prefix.value
-    }, {
-    git_commit           = "d68d2897add9bc2203a5ed0632a5cdd8ff8cefb0"
+    },{
+    git_commit           = "N/A"
     git_file             = "terraform/aws/iam.tf"
-    git_last_modified_at = "2020-06-16 14:46:24"
-    git_last_modified_by = "nimrodkor@gmail.com"
-    git_modifiers        = "nimrodkor"
-    git_org              = "bridgecrewio"
-    git_repo             = "terragoat"
-    yor_trace            = "9b45b298-c1ea-426a-9644-610780021eaa"
-  })
+    git_org              = "zscaler-bd-sa"
+    git_repo             = "zs-terraform-iac-scanning"
+    })
 
 }
 

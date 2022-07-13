@@ -4,7 +4,7 @@ data "google_compute_zones" "available_zones" {
 }
 
 resource "google_container_cluster" "workload_cluster" {
-  name               = "terragoat-${var.environment}-cluster"
+  name               = "zs-terraform-iac-scanning-${var.environment}-cluster"
   logging_service    = "none"
   location           = var.region
   initial_node_count = 1
