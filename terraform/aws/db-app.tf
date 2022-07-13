@@ -32,7 +32,7 @@ resource "aws_db_instance" "default" {
 
   # Ignore password changes from tf plan diff
   lifecycle {
-    ignore_changes = ["password"]
+    ignore_changes = [password]
   }
 }
 
