@@ -23,8 +23,9 @@ This repository was built to enable DevSecOps design and implement a sustainable
 Before you proceed please take a note of these warning:
 > :warning: These examples creates intentionally vulnerable AWS resources into your account.
 
-**DO NOT deploy this template examples in a production environment or alongside any sensitive AWS resources.**
-**All passwords in this repo are used as an example and should not be used in production**
+> :warning:  **DO NOT deploy this template examples in a production environment or alongside any sensitive AWS resources.**
+
+> :warning:  **All passwords in this repo are used as an example and should not be used in production**
 
 ## Requirements
 
