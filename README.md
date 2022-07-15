@@ -235,7 +235,7 @@ We would love to hear about more ideas on how to find vulnerable infrastructure-
 
 ## Support
 
-[Zscaler-BD-SA Team](https://github.com/zscaler-bd-sa) builds and maintains TerraGoat to encourage the adoption of policy-as-code.
+[Zscaler-BD-SA Team](https://github.com/zscaler-bd-sa) builds and maintains this repository to encourage the adoption of policy-as-code.
 
 If you need direct support you can contact us at [zscaler-partner-labs@z-bd.com](mailto:zscaler-partner-labs@z-bd.com).
 
