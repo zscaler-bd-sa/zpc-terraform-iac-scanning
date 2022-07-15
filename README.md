@@ -222,9 +222,9 @@ terraform destroy
 
 ## Zscaler IaC Scanning Projects
 
-* [zs-aws-cfn-iac-scanning](https://github.com/zscaler-bd-sa/zs-aws-cfn-iac-scanning) - Vulnerable by design Cloudformation template
-* [zs-terraform-iac-scanning](https://github.com/zscaler-bd-sa/zs-terraform-iac-scanning) - Vulnerable by design Terraform stack
-* [zs-kustomize-iac-scanning](https://github.com/zscaler-bd-sa/zs-kustomize-iac-scanning) - Vulnerable by design kustomize deployment
+* [zpc-aws-cfn-iac-scanning](https://github.com/zscaler-bd-sa/zpc-aws-cfn-iac-scanning) - Vulnerable by design Cloudformation template
+* [zpc-terraform-iac-scanning](https://github.com/zscaler-bd-sa/zpc-terraform-iac-scanning) - Vulnerable by design Terraform stack
+* [zpc-kustomize-iac-scanning](https://github.com/zscaler-bd-sa/zpc-kustomize-iac-scanning) - Vulnerable by design kustomize deployment
 
 ## Contributing
 
