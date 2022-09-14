@@ -54,7 +54,7 @@ resource "aws_db_instance" "zscaler_db" {
   vpc_security_group_ids    = [aws_security_group.zscaler_rds_sg.id]
   db_subnet_group_name      = aws_db_subnet_group.zscaler_rds_subnet_grp.id
   identifier                = "zscaler-db-${var.environment}"
-  storage_encrypted         = true
+  storage_encrypted         = false
   skip_final_snapshot       = true
   final_snapshot_identifier = "zscaler-db-${var.environment}-db-destroy-snapshot"
   kms_key_id                = aws_kms_key.zscaler_db_kms_key.arn
