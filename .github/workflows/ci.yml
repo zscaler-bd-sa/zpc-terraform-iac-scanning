@@ -1,10 +1,16 @@
 ---
 name: Zscanner IAC Scan
 on:
+  # Trigger the workflow on push or pull request
+  # but only for the master branch
   push:
-    branches: [ $default-branch, $protected-branches ]
+    branches:
+      - main
+      - develop
   pull_request:
-    branches: [ $default-branch ]
+    branches:
+      - main
+      - develop
 
 jobs:
 
