@@ -1,16 +1,10 @@
 ---
 name: Zscanner IAC Scan
 on:
-  # Trigger the workflow on push or pull request
-  # but only for the master branch
   push:
-    branches:
-      - main
-      - develop
+    branches: [ $default-branch, $protected-branches ]
   pull_request:
-    branches:
-      - main
-      - develop
+    branches: [ $default-branch ]
 
 jobs:
 
@@ -21,7 +15,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name : Zscaler IAC Scan
-        uses : ZscalerCWP/Zscaler-IaC-Action@v1.0.0
+        uses : ZscalerCWP/Zscaler-IaC-Action@v1.2.0
         id: zscaler-iac-scan
         with:
           client_id : ${{ secrets.ZSCANNER_CLIENT_ID }}
