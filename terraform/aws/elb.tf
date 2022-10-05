@@ -27,10 +27,10 @@ resource "aws_elb" "weblb" {
 
   tags = merge({
     Name = "foobar-terraform-elb"
-    },{
-    git_commit           = "N/A"
-    git_file             = "terraform/aws/elb.tf"
-    git_org              = "zscaler-bd-sa"
-    git_repo             = "zs-terraform-iac-scanning"
-    })
+    }, {
+    git_commit = "N/A"
+    git_file   = "terraform/aws/elb.tf"
+    git_org    = "zscaler-bd-sa"
+    git_repo   = "zs-terraform-iac-scanning"
+  })
 }
