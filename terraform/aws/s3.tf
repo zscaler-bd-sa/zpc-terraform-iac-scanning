@@ -10,9 +10,9 @@ resource "aws_s3_bucket" "data" {
     Name        = "${local.resource_prefix.value}-data"
     Environment = local.resource_prefix.value
     }, {
-    git_file             = "terraform/aws/s3.tf"
-    git_org              = "zscaler-bd-sa"
-    git_repo             = "zs-terraform-iac-scanning"
+    git_file = "terraform/aws/s3.tf"
+    git_org  = "zscaler-bd-sa"
+    git_repo = "zs-terraform-iac-scanning"
   })
 }
 
@@ -24,9 +24,9 @@ resource "aws_s3_bucket_object" "data_object" {
     Name        = "${local.resource_prefix.value}-customer-master"
     Environment = local.resource_prefix.value
     }, {
-    git_file             = "terraform/aws/s3.tf"
-    git_org              = "zscaler-bd-sa"
-    git_repo             = "zs-terraform-iac-scanning"
+    git_file = "terraform/aws/s3.tf"
+    git_org  = "zscaler-bd-sa"
+    git_repo = "zs-terraform-iac-scanning"
   })
 }
 
@@ -35,15 +35,15 @@ resource "aws_s3_bucket" "financials" {
   # bucket does not have access logs
   # bucket does not have versioning
   bucket        = "${local.resource_prefix.value}-financials"
-  acl           = "private"
+  acl           = "public"
   force_destroy = true
   tags = merge({
     Name        = "${local.resource_prefix.value}-financials"
     Environment = local.resource_prefix.value
     }, {
-    git_file             = "terraform/aws/s3.tf"
-    git_org              = "zscaler-bd-sa"
-    git_repo             = "zs-terraform-iac-scanning"
+    git_file = "terraform/aws/s3.tf"
+    git_org  = "zscaler-bd-sa"
+    git_repo = "zs-terraform-iac-scanning"
   })
 
 }
@@ -52,7 +52,7 @@ resource "aws_s3_bucket" "operations" {
   # bucket is not encrypted
   # bucket does not have access logs
   bucket = "${local.resource_prefix.value}-operations"
-  acl    = "private"
+  acl    = "public"
   versioning {
     enabled = true
   }
@@ -61,9 +61,9 @@ resource "aws_s3_bucket" "operations" {
     Name        = "${local.resource_prefix.value}-operations"
     Environment = local.resource_prefix.value
     }, {
-    git_file             = "terraform/aws/s3.tf"
-    git_org              = "zscaler-bd-sa"
-    git_repo             = "zs-terraform-iac-scanning"
+    git_file = "terraform/aws/s3.tf"
+    git_org  = "zscaler-bd-sa"
+    git_repo = "zs-terraform-iac-scanning"
   })
 
 }
@@ -71,19 +71,19 @@ resource "aws_s3_bucket" "operations" {
 resource "aws_s3_bucket" "data_science" {
   # bucket is not encrypted
   bucket = "${local.resource_prefix.value}-data-science"
-  acl    = "private"
+  acl    = "public"
   versioning {
     enabled = true
   }
   logging {
-    target_bucket = "${aws_s3_bucket.logs.id}"
+    target_bucket = aws_s3_bucket.logs.id
     target_prefix = "log/"
   }
   force_destroy = true
   tags = {
-    git_file             = "terraform/aws/s3.tf"
-    git_org              = "zscaler-bd-sa"
-    git_repo             = "zs-terraform-iac-scanning"
+    git_file = "terraform/aws/s3.tf"
+    git_org  = "zscaler-bd-sa"
+    git_repo = "zs-terraform-iac-scanning"
   }
 }
 
@@ -97,7 +97,7 @@ resource "aws_s3_bucket" "logs" {
     rule {
       apply_server_side_encryption_by_default {
         sse_algorithm     = "aws:kms"
-        kms_master_key_id = "${aws_kms_key.logs_key.arn}"
+        kms_master_key_id = aws_kms_key.logs_key.arn
       }
     }
   }
@@ -105,5 +105,5 @@ resource "aws_s3_bucket" "logs" {
   tags = merge({
     Name        = "${local.resource_prefix.value}-logs"
     Environment = local.resource_prefix.value
-    })
+  })
 }
